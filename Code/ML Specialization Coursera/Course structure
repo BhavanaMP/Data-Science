@@ -1,0 +1,355 @@
+-------------------------------------
+Course 1 : Supervised Learning
+-------------------------------------   
+   W1: LINEAR REGRESSION (regression), GRADIENT DESCENT OPTIMIZATION
+            
+            - Univariate Linear Regression 
+                - Housing price prediction
+            - Cost function J (MSE)
+            - Objective to find params w, b to reduce cost J
+            - Gradient Descent Basics
+            - Learning rate for step
+            - Gradients for direction
+            - Parameters update rule (optimization)
+            - Global Minima, Overshooting with high learning rate, slow learning with small learning rate
+            - Fitting the model to the training data
+            - Cost J vs w graph (convex graph)
+            - Training with Gradient Descent
+            
+    W2 - MULTIPLE LINEAR REGRESSION, FEATURE SCALING, FEATURE ENGINEERING
+            
+            - Vectorization
+            - Gradient Descent for Mulitple Linear Regression
+            - Feature Scaling
+            - Histograms to show the distribution of features using norm.pdf()
+            - Feature Engineering
+                - Polynomial Regression (polynomial features)
+                    - Creating new polynomial features like x^2 , x^3
+            - Feature Engineering and Polynomial Regression
+            - Linear Regression with Scikit-learn
+             
+    W3 - LOGISTIC REGRESSION (Binary classification) , OVERFITTING and REGULARIZATION, DECISION BOUNDARY 
+                
+                - Classification with Linear Regression
+                - Problem of doing classification with Linear Regression
+                    - The model shifts with every new data point added
+                - Sigmoid function (z vs g(z)S shaped graph)
+                - Decision rule and Decision boundary
+                - Classification Threshold for prediction
+                - Loss function for Logistic regression (Logistic loss / binary cross entropy)
+                    - Why squared error is not useful?
+                    - Improved single Logistic Loss
+                - Gradient Descent for Logistic Regression
+                - Overfitting 
+                    (more complex features, higher weights)
+                    - Regularization to address overfitting (L2 Regularization)
+                        - L1 or Lasso Regularization
+                        - L2 or Ridge Regularization
+                        - Elastic Net (combination of L1 and L2)
+                    - Parameters w shrinking effect
+                    - Regularized Logistic Regression
+                    - Regularized Linear Regression (Ridge Regression)
+                - Non linear decision boundary by making use of polynomial features
+                    - Contour graph for decision boundary
+
+-----------------------------------------
+Course 2 : Advanced Learning Algorithms
+------------------------------------------
+   
+   W1 - NEURAL NETWORKS
+           
+           - Shirt Demand Prediction Problem as Binary classification
+           - Recognizing Images like Digits as Binary Classification problem(recognizing handwritten digit as 0 or 1 from MNIST)
+           - Neural Network Layers
+               - Single Layer Perceptron 
+                   - Linear Regression and Logistic Regression with single layer Perceptron
+                   (Single Hidden Layer,o/p layer with sigmoid activation, for binary classification i.efor linear spearations of 2 classes)
+                       - Forward Propagation
+                       - Inference (Making Predictions)
+                       - Sigmoid Activation Function and Linear Activation function
+                       - Plotting the probabilities using pcolormesh
+                - Multi Layer Perceptron
+                    - More hidden layers, for categorical classification, regression, many activation functions other than sigmoid
+                    - for more complex non linearly seperable problems
+            - Neurons and layers in tensorflow
+                - Dense Hidden Layers
+            - Tensorflow Implementation of Neural Network for Binary classification problem of Coffee Roasting
+                - Data in tensorflow as 2D matrices (2D array = matrix)
+                - Numpy vectors, arrays, row vector, column vector
+                - Converting tensors to numpy arrays
+                - W, b vectors of hidden layers, activation_out vectors of hidden layer 
+                - Binary digit classification & coffee roasting using neural network from scratch manually
+                    - (classify digit as 0 or 1) with usual neural network initially i.e without Sequential model
+                - Binary digit classification using Sequential model
+            - AGI (Artificial General Intelligence) Introduction
+            - Vectorization in Neural Networks
+                - Matrix multiplication and rules
+                - np.matmul(A_in, W) + B
+                - Transpose W.T, A_in dot product
+            - Neural Network for Binary Classfication of coffee roasting process to get a good coffee inclusing classification threshold
+            
+    W2 - NN TRAINING, ACTIVATION FUNCTIONS, BROADCASTING, MULTI CLASS CLASSIFICATION, BACK PROPAGATION, ADAM, CNN, MULTILABEL CLASSIFICATION
+            
+            - Training in tensorflow using model.fit(), model.compile() for binary classification
+                - BinaryCrossEntropy() loss for binary classifiaction, Adam Optimizer
+            - Activation functions other than sigmoid
+                - Linear Activation functions
+                    - Linear activation function
+                    - Sigmoid activation function (for on and off situations)
+                - Non linear activation functions for handling piecewise linear data
+                    (shirt marketing, availability, price, awarness problem)
+                    - ReLU Activation function(Rectified Linear Unit)
+                    - Softmax Activation function
+                    - Minimal Introduction to tanh(ranges -1 to 1), LeakyReLU activation functions(to overcome dying relu)
+            - Brooadcasting in numpy
+            - Multi class classification using Neural Network and softmax activation function
+                - Classifying digits from 0 to 9 using softmax in the o/p layer
+                - Softmax function (also called Softmax regression just like logistic regression but used for classification)
+                - Categorical cross entropy loss
+                - Using loss as SparseCategoricalCrossEntropy()
+                - Numerical Round off errors
+                
+                - Improved Softmax function
+                    - Using linear activation function in the o/p layer to get logits
+                    - Use from_logits=true in the loss function to avoid numerical round off errors
+            - Multi Label Classification
+                (Classification with multiple outputs each of binary class for a single example. Eg: road traffic image)
+                - Training with Single Neural Network with 3 outputs with sigmoid actv func if single ex belongs to 3 of 3 binary classes
+            - Advanced optimization
+                - ADAM (Adaptive Moment Estimation)
+                    - Adaptation of learning rate
+            - Advanced Layer Types
+                - Convolutional Layers
+                    - Computationally inexpensive as each unit sees part of data, less training data needed, reduces overfitting
+                - Convolutional Neural Network for digit classification
+                - ECG classification using CNN
+            - Back Propagation
+                - Relation between w, J and dj/dw
+                - Derivatives of a composite function
+                - Computational Graph Introduction
+                - Composite functions
+                - Chain rule to find derivative of a composite function
+                - Derivatives calculation using sympy library
+                - Computational graph using graphviz's Digraph
+                
+    
+    W3 - MODEL EVALUATION, MODEL SELECTION, MODEL DIAGNOSTICS (what to do next?), ADDING DATA, ITERATIVE ML LOOP, SKEWED DATASETS 
+            
+            - Model Selection
+                - Evaluating a model on validation set (hold out validation set)
+                - Selecting the model that performed well on the validation set
+            - Model Evaluation
+                - Evaluation of selected trained model on the test set to test the generalization performance
+                - Model Selection and Evaluation for regression and classification using Neural networks
+                    - Using PolynomialFeatures() to regression model and selecing the best model
+            - Model Diagnostics
+                - Diagnosing Bias and variance
+                    - Plot training cost J_train vs validation cost J_cv(or J_val) and  for different iterations
+                - Establishing Baseline/Benchmark Performance
+                - Learning curves
+                    - Plot between experience m - traning set size vs J_train, J_cv, baseline performance like human level performance
+                    - Plot between iterations and cost over the iterations
+                - Tuning hyperparameters
+                    - Tuning learning rate using bias and variance diagnosis
+                    - Tuning regularization parameter using bias and varaince diagnosis
+                    - Tuning model complexity i.e polynomial degree of the model using bias and varaince diagnosis
+                    - Tuning m=no. of training examples vs J_train, J_cv(getting percents of m to undestand bias, variance)
+                    - Using GridSearchCV to select the best params automativally based on given params_grid instead of doing manually
+                - How to overcome bias and varaince?
+                    - High Bias - Underfitting
+                        - Reduce the regularization paramater for the model to concentrate on fitting objective
+                        - Try adding more complex/polynomial features
+                        - Try getting additional features
+                    - High variance - Overfitting
+                        - Add/get more data
+                        - Increase the regularization paramater for the model to concentrate on reducing the complex parameters
+                        - Use subsets/smaller sets of features
+                - Bias and Variance in Neural Networks
+                    - High Bias
+                        - Make or increase the network architecture and train until the training cost is reduced
+                        - Larger NN's are low biased machines
+                    - High Variance
+                        - Increase the data
+                    - Larger Neural Network with appropriate regularization parameter to avoid overfitting
+            - Machine Learning Development Process
+                - Error Analysis
+                - Iterative Loop of ML Development with training, (bias, varaince diagnosis, error analysis), improve model, repeat
+            - Adding Data
+                - Adding Data using Data Augmenation techniques (using existing data)
+                    - Rotation, Warping, translation, reverse, increasing, decreasing, adding background noise to the voices for speech
+                    - distortion to the image that is representative of test data
+                - Adding Synthetic Data or Data Synthesis (brand new data)
+                    - Data for Photo OCR, generating using computer typepad fonts
+                - Transfer Learning (when there is not enough data to get)
+                    - Supervised pretraining on large data
+                    - Finetune pretrained model for our problem at hand 
+                        - learns edges, corners, curves/basic shapes
+                    - BERT, GPT
+            - Full cycle of Machine Learning
+                - Scope of the project
+                - Collect Data
+                - Train Model, Bias variance and error analysis and iterative improvement
+                - Deploy the trained model in production server for inference (MLOps) 
+                - Monitor and Maintain the model (MLOps)
+                    - Scaling
+                    - Logging
+                    - Monitoring the performance time to time to find out data shifting problems 
+                    - Ensure efficient prediction
+            - Fairness, Bias and ethics
+            - Skewed DataSets (Classification)
+                - Error Metrics for Skewed data sets
+                    - Confusion Matrix
+                    - Precision
+                    - Recall
+                    - F1 score to trade off precision and recall using harmonic mean
+                    - ROC AUC curve with threshold
+            - setting x axis to log scale when x axis has very low scale (like for regularization paramter on x axis)
+
+    W4 - DECISION TREES, ENTROPY, INFORMATION GAIN, SPLITS, REGRESSION TREES, ONE HOT ENCODING, TREE ENSEMBLES, BAGGING, BOOSTING
+            
+            - Decision Tree Learning Process
+                - Nodes
+                    - Root nodes, decision nodes, leaf nodes
+                - Features to split on at each node
+                - Criteral used to split i.e measuring purtiy after split
+                    - Entropy
+                    - Information Gain (Reduction in Entropy)
+                - One hot Encoding for categorical features
+                - Handling split for contionuous valued/ numerical features      
+            - Regression Trees
+                - Using variance as purity measure after each split - i.e reduction in varaince is calculated for splitting
+                - Averaging of y values of training examples at leaf node
+            - Early Stopping criteria
+            - Tree Ensembles
+                - Using Multiple Decision Trees because of changing one example leads to high variance with single decision tree
+                - Sampling with replacement technique to get different uncorrelated trees
+                - Bagging
+                    - Random forest that introduces randomness in choosing subset of features to avoid collinear initial nodes
+                    - Averaging(for numerical) and majority vote(Categorical)
+                    - Use n_jobs=-1 for parallel computing for independent trees
+                - Boosting
+                    - Decision stumps
+                    - Gradient Boosting Algorithm
+                        - Ada Boost
+                        - XGBoost which follows sequential trees construction by learning from previous trees mistakes
+                            - XGBoost with learningrate, earlystopping with the help of validation set
+                    - Weighted average of all the weak learners
+            - Ensemble hyperparamaters tuning(max_depth, min_samples_split, n_estimators) using J_train and J_Cv Bias variance analysis
+            - GridSearchCV introduction for hyperparameter tuning combinations
+             - When to use Decision trees?
+                 - Tabular data
+                 - Not for unstructural data like images text, speech, images
+            - Generating Tree visualizations using PIL, networkx Digraph, dot graphvizlayout libraries
+            - Tree pruning basic introduction
+            - Plot entropy vs p
+                 
+------------------------------------
+Course 3 - Unsupervised Learning
+------------------------------------
+    
+    W1 - CLUSTERING, ANAMOLY DETECTION
+        - Clustering
+            - K Means for clustering
+                - Assignment step
+                - Update step
+            - Eulidean distance/ L2 Norm
+            - Optimization objective of K-Means to minimize to euclidean distance from all the points to their cluster centroids
+            - K means cost function optimization / distrotion / inertia
+            - Convergence criteria of K means
+            - Drawbacks of K-Means clustering algorithm
+            - Ways to improve random initialization of cluster centroids
+            - Hyperparameters tuning of K Means (K and centroid initialization) 
+                - Tuning the number of centroids i.e K
+                    - Elbow method (K vs J plot) (not preferrable solution)
+                - Tuning the initialization of K centroids µ1,...,µk
+            - Coherence and Cohesive Clusters(within-cluster variance/distance)
+            - Plotting K means clustering process history
+            - Selecting K centroids by random shuffling using np.random.permutation(X.shape[0])
+            - Evaluation of clustering
+                - Cost function evaluation
+                - Silhouette coefficient
+                - Dunn indicator
+            - Image compression of a bird image using clustering
+                - Lossless Compression
+                - Lossy Compression
+                - Color representations, color depths
+                - Transforming 3channeled image to 2d image by making each channel as feature using reshape
+                
+         
+        - Anamoly Detection / Outlier Detection
+            - Density estimation using Gaussian Models for Anamoly Detection
+                - Guassian Distribution probability density function (PDF) P(X)
+            - Evaluating using small cv and test set, metrics like precision, recall 
+            - Univariate guassian distribution and its PDF
+            - Multivariate Gaussian distribution and its PDF
+                - Covariance matrix
+            - Anamoly Detection vs Supervised Learning
+            - Choosing what features to use in Anamoly Detection
+                - Transformation of non guassian features to gaussian features with plt.hist()
+                    - log(x), log(x + 1), log(x + C),  x**2, sqrt(x), x**3, x**1/3, x**1/4, log(1 + x**2)
+    
+    W2 - RECOMMENDER SYSTEMS and PCA
+            
+            - Collaborative Filtering
+                - Using Per Item Features
+                - User Item Matrix
+                - Dealing with binary ratings (likes, favs, clicks)
+                - Collaborative filtering learning algorithm
+                    - Cost function
+                - Implementation detail
+                    - Mean Normalization of item ratings (Mean centering) to address user bias and item bias
+                    - Learning w, b for all the users and also input X with features from items
+                    - Ratings matrix Y and corresponding R matrix
+                    - Custom Training in tensorflow using gradient.Tape(), tensor variables. optimizer.apply_gradients()
+                    - Finding related items using similarity
+                - Cold Start Problem
+
+                
+            - Content Based Filtering
+                - Drawback of Collaborative Filtering
+                - Difference between Collaborative and Content Based Filtering
+                - Deep Learning for content based Filtering
+                    - 2 Neural Networks user NN and item NN to learn params for users and Items using their content features
+                    - Scaling and Min Max Normalization of target (dot product of Vu and Vi)
+                    - l2_normalize of vu and vi vectors
+                    - L2 Norm and Euclidean Distance
+                - Tensorflow implementation of Content Based Recommenders
+                - Using tabulate to pretty print the tables or recommendations
+                - Retrieval and Ranking technique for large recommendation catalogue
+                - Ethical use of recommender systems
+        
+            - PCA 
+                - Prinicipal Components where the variance is best captured
+                - Orthogonal Projection of original data onto principal component axes
+                - PCA Algorithm
+                - PCA for data visualization or exploratory data analysis
+                - PCA for feature reduction
+                - Explained variance of each principal component using pca.explained_variance_ratio_ 
+                - Inverse transform of projections to its original coordinates
+                - Using Bokeh and plotly.express, subplots, graph objects for visualization of PCA
+                - using pandas df.corr() and mask to get the sorted feature correlations
+                - Notes on eigen vectors and eigen values, formal PCA,  polar coordinates to cartesian coordinates
+            
+    W3 - REINFORCEMENT LEARNING
+            - State, Action, environment, rewards, Policy, Returns, State Active Value function or Q-function, discount factor, Bellman equation
+            - Discrete State space
+                - Mars rover with 6 states and 2 actions (<-, ->) 
+            - Random Stochastic environment
+                - transition probabilities (misstep probabilities)
+            - Expected Q value over all possible paths. E(Q(s', a'))
+            
+            - Continuous state space
+                - Lunar Lander
+                    - uses gym environment
+                    - Deep Q Network
+                        - Learning the Q function
+                        - Improving the network to have outputs that are equal to no. of actions possible at a state
+                        - Generating experiences from the environment
+                            - Experience Replay Buffer
+                        - Target Network for learning
+                        - epsilon greedy policy
+                            - Exploitation
+                            - Exploration
+                        - Soft updates and Mini batch Learning
+        
+       
